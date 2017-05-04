@@ -1,0 +1,12 @@
+.grid_component {
+  height: auto;
+  padding: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.grid_component > * {
+  flex-basis: 200px;
+  margin-top: 50px;
+}

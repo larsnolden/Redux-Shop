@@ -1,8 +1,8 @@
-import people from './people-reducer.js';
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
+import storeFront from './storeFront';
 
 const rootReducer = combineReducers({
-  people
+  storeFront: storeFront
 });
 
 export default rootReducer;
