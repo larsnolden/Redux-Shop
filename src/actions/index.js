@@ -4,3 +4,15 @@ export const addToCart = (id) => {
     id
   }
 }
+
+export const checkout = () => {
+  return {
+    type: 'CHECKOUT'
+  }
+}
+
+export const toggleCart = () => {
+  return {
+    type: 'TOGGLE_CART'
+  }
+}

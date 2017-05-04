@@ -1,0 +1,16 @@
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-40 { font-size: 40px }
+
+
+.Cart {
+  max-width: 450px;
+  height: auto;
+}
+
+.Cart h4 {
+
+}
+
+.Cart ul {
+  list-style-type: none;
+}

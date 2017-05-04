@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Item_Container from './storeFront/item_container';
+import StoreFront_Compoent from './storeFront';
 
 class App extends Component {
   render() {
     return (
-      <Item_Container/>
+      <StoreFront_Compoent />
     );
   }
 }
