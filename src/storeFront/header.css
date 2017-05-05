@@ -1,3 +1,6 @@
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-30 { font-size: 30px }
+
 .header {
   margin: 0;
   width: 100%;
@@ -6,6 +9,43 @@
   background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
 }
 
+.cartOverview {
+  height: 120px;
+  width: 300px;
+  background: #f9f9f9;
+  float: right;
+  margin-right: 20px;
+}
+
+.cartOverview h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .cartButton {
-  float: right
+  margin: 0 auto;
+  width: 120px;
+  height: 40px;
+  display: block;
+  color: white;
+  background: rgba(73,165,191,1);
+}
+
+.cartButton i {
+  float: left
+}
+
+@media screen and (max-width: 450px) {
+ .cartOverview {
+   margin: 0 auto;
+   float: none;
+   clear: both;
+ }
+ .cartOverview h1 {
+   margin: 0
+ }
+
+ .cartButton {
+   margin: 30px auto;
+ }
 }

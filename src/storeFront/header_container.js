@@ -4,7 +4,8 @@ import { toggleCart } from '../actions';
 
 let mapStateToProps = (state) => {
   return {
-    showCart: state.storeFront.showCart
+    showCart: state.storeFront.showCart,
+    cartTotal: state.storeFront.cartTotal
   }
 }
 
@@ -17,6 +18,6 @@ let mapDispatchToProps = (dispatch) => {
 let Header_Container = connect(
   mapStateToProps,
   mapDispatchToProps
-) (Header_Component)
+)(Header_Component)
 
 export default Header_Container;

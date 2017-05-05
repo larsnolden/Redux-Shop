@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import StoreFront_Compoent from './storeFront';
+import StoreFront_Component from './storeFront';
 
 class App extends Component {
   render() {
     return (
-      <StoreFront_Compoent />
+      <StoreFront_Component />
     );
   }
 }

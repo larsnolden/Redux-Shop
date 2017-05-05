@@ -43,12 +43,17 @@ let initialState = {
 const storeFront = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
-      //dipatch 'calculate cart' action here  
-      return Object.assign({}, state, { cartItems: addToCart(itemById(action.id, state.items), state.cartItems), cartTotal: calcCartTotal(state.cartItems) })
+      console.log(`state: ${JSON.stringify(state)}`);
+      return Object.assign({}, state, { cartItems: addToCart(action.item, state.cartItems) })
+    case 'REMOVE_FROM_CART':
+      console.log(`state: ${JSON.stringify(state)}`);
+      return Object.assign({}, state, { cartItems: removeFromCart(action.item, state.cartItems) })
     case 'CHECKOUT':
       console.log('checkout', state.cartItems)
     case 'TOGGLE_CART':
-      return Object.assign({}, state, { showCart: !state.showCart})
+      return Object.assign({}, state, { showCart: !state.showCart })
+    case 'CALC_CART_TOTAL':
+      return Object.assign({}, state, { cartTotal: calcCartTotal(state.cartItems) })
     default:
       return state
   }
@@ -62,13 +67,39 @@ function itemById(id, items) {
 
 function addToCart(item, cart) {
   let newCart = Array.from(cart);
-  newCart.push(item);
-  return newCart;
+  if (newCart.includes(item)) {
+    let newItem = newCart[newCart.indexOf(item)];
+    newItem.count += 1;
+    newItem.priceTotal = newItem.price * newItem.count;
+    return newCart;
+  }
+  else {
+    item.count = 0;
+    item.priceTotal = item.price;
+    newCart.push(item);
+    return newCart;
+  }
 }
 
-function calcCartTotal(cartItems) {   
+function removeFromCart(item, cart) {
+  let newCart = Array.from(cart);
+  if (newCart.includes(item)) {
+    if (item.count >= 2) {
+      let newItem = newCart[newCart.indexOf(item)];
+      newItem.count -= 1;
+      newItem.priceTotal = newItem.price * newItem.count;
+      return newCart;
+    }
+    else {
+      newCart.splice(newCart[newCart.indexOf(item)], 1);
+      return newCart;
+    }
+  }
+}
+
+function calcCartTotal(cartItems) {
   var total = cartItems.reduce(function (acc, item) {
-    return acc + item.price
+    return acc + item.priceTotal
   }, 0)
   return total
 }

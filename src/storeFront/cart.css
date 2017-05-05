@@ -1,16 +1,39 @@
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-40 { font-size: 40px }
-
-
 .Cart {
-  max-width: 450px;
+  width: 300px;
   height: auto;
+  background: #e8f7f6;
+  position: absolute;
+  right: 20px;
+  top: 120px;
 }
 
-.Cart h4 {
-
+.outerButtonDiv {
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  padding-left: 5px;
+  width: 90%;
+  display: block;
+  margin: 10px auto;
+  background: #A3DBEB;
+  position: relative;
 }
 
-.Cart ul {
-  list-style-type: none;
+.countButton {
+  margin: 0 0 0 0;
+  float: right
+}
+.checkoutButton {
+  margin: 10px auto;
+  color: white;
+  background: rgba(73,165,191,1);
+  display: block;
+}
+
+@media screen and (max-width: 450px) {
+  .Cart {
+    left: 50%;
+    transform: translateX(-50%);
+   }
 }

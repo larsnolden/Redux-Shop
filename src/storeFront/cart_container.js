@@ -3,6 +3,11 @@ import { checkout } from '../actions'
 
 import Cart_Component from './cart_component';
 
+import {
+  addToCart_update,
+  removeFromCart_update
+} from '../actions';
+
 const mapStateToProps = (state) => {
   return {
     cartItems: state.storeFront.cartItems,
@@ -12,7 +17,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCheckoutClick: () => dispatch(checkout())
+    onCheckoutClick: () => dispatch(checkout()),
+    onIncreaseItemClick: (item) => dispatch(addToCart_update(item)),
+    onDecreaseItemClick: (item) => dispatch(removeFromCart_update(item))
   }
 }
 

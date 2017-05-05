@@ -5,7 +5,7 @@ import {
 
 import Grid_Component from './grid_component';
 import {
-  addToCart
+  addToCart_update
 } from '../actions';
 
 const mapStateToProps = (state) => {
@@ -16,8 +16,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onItemClick: (id) => {
-      dispatch(addToCart(id))
+    onItemClick: (item) => {
+      dispatch(addToCart_update(item))
     }
   }
 }

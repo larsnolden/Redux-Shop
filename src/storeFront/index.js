@@ -2,7 +2,7 @@ import React from 'react';
 import Header_Container from './header_container';
 import Item_Container from './item_container';
 
-let StoreFront_Compoent = () => {
+let StoreFront_Component = () => {
   return (
     <div >
       <Header_Container />
@@ -11,4 +11,4 @@ let StoreFront_Compoent = () => {
   )
 }
 
-export default StoreFront_Compoent;
+export default StoreFront_Component;
