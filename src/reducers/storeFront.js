@@ -74,7 +74,7 @@ function addToCart(item, cart) {
     return newCart;
   }
   else {
-    item.count = 0;
+    item.count = 1;
     item.priceTotal = item.price;
     newCart.push(item);
     return newCart;
